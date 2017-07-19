@@ -45,7 +45,7 @@ router.get('/edit/:id', (req, res, next) => {
       })
 })
 
-//routing post to input database data input from form editauthor
+//routing post to input database update data input from form editauthor
 router.post('/edit/:id', (req, res, next) => {
   let id = req.params.id
   let first_name = req.body.first_name
@@ -60,6 +60,18 @@ router.post('/edit/:id', (req, res, next) => {
           res.redirect('/authors')
         })
       })
+})
+
+
+//routing to delete author
+router.get('/delete/:id', (req, res, next) => {
+  let id = req.params.id
+  db.Author.destroy({
+    where : {id :id}
+  })
+  .then(() => {
+    res.redirect('/authors')
+  })
 })
 
 
