@@ -60,5 +60,16 @@ router.post('/edit/:id', (req, res, next) => {
 })
 
 
+router.get('/delete/:id', (req, res, next) => {
+  let id = req.params.id
+  db.Publisher.destroy({
+    where : {id : id}
+  })
+  .then(() => {
+    res.redirect('/publishers')
+  })
+})
+
+
 
 module.exports = router;
