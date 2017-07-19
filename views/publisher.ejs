@@ -19,7 +19,7 @@
         <tr>
           <td><%= publisher.id %></td>
           <td><%= publisher.name %></td>
-          <td><a href="/publishers/edit/<%= publisher.id%>">Update</a> || <a href="/publishers/delete/<%= publisher.id%>">Delete</a></td>
+          <td><a href="/publishers/edit/<%= publisher.id%>">Update</a> || <a href="/publishers/delete/<%= publisher.id%>" onclick="return confirm('Are you sure want to delete this Publisher?');">Delete</a></td>
         </tr>
         <% })%>
       </tbody>
