@@ -4,5 +4,11 @@ module.exports = function(sequelize, DataTypes) {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING
   });
+  
+  Author.associate = models => {
+    Author.belongsToMany(models.Book, {
+      through : 'AuthorBook'
+    })
+  }
   return Author;
 };
