@@ -27,22 +27,22 @@ router.get('/addauthor', (req, res, next) => {
 router.post('/addauthor', (req, res, next) => {
   let first_name = req.body.first_name
   let last_name = req.body.last_name
-    db.Author.create({
-      'first_name' : first_name,
-      'last_name' : last_name
-    })
-    .then(data_author => {
-      res.redirect('/authors')
-    })
+  db.Author.create({
+    'first_name' : first_name,
+    'last_name' : last_name
+  })
+  .then(data_author => {
+    res.redirect('/authors')
+  })
 })
 
 //routing to edit data input from show author
 router.get('/edit/:id', (req, res, next) => {
   let id = req.params.id
-    db.Author.findById(id)
-      .then(data_author => {
-        res.render('editauthor', {data_author : data_author})
-      })
+  db.Author.findById(id)
+  .then(data_author => {
+    res.render('editauthor', {data_author : data_author})
+  })
 })
 
 //routing post to input database update data input from form editauthor
@@ -50,16 +50,16 @@ router.post('/edit/:id', (req, res, next) => {
   let id = req.params.id
   let first_name = req.body.first_name
   let last_name = req.body.last_name
-    db.Author.findById(id)
-      .then(data_author => {
-        data_author.update({
-          'first_name' : first_name,
-          'last_name' : last_name
-        })
-        .then(() => {
-          res.redirect('/authors')
-        })
-      })
+  db.Author.findById(id)
+  .then(data_author => {
+    data_author.update({
+      'first_name' : first_name,
+      'last_name' : last_name
+    })
+    .then(() => {
+      res.redirect('/authors')
+    })
+  })
 })
 
 
