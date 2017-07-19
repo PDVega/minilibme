@@ -2,12 +2,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Publisher = sequelize.define('Publisher', {
     name: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+  
+  Publisher.associate = models => {
+    Publisher.hasMany(models.Book);
+  }
   return Publisher;
 };

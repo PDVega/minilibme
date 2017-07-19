@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Show Book</title>
+  </head>
+  <body>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Judul Buku</th>
+          <th>Pengarang</th>
+          <th>Penerbit</th>  
+        </tr>
+      </thead>
+      <tbody>
+        <% data_book.forEach(book => { %>
+        <tr>
+          <td><%= book.id %></td>
+          <td><%= book.title %></td>
+          <td>Masih Ngarang</td>
+          <td>Belum Terbit</td>  
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    
+  </body>
+</html>
