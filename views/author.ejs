@@ -21,7 +21,7 @@
           <td><%= author.id %></td>
           <td><%= author.first_name %></td>
           <td><%= author.last_name %></td>
-          <td><a href="/authors/edit/<%=author.id%>">Update</a> || <a href="/authors/delete/<%= author.id%>">Delete</a></td>
+          <td><a href="/authors/edit/<%=author.id%>">Update</a> || <a href="/authors/delete/<%= author.id%>" onclick="return confirm('Are you sure want to delete this Author?');">Delete</a></td>
         </tr>
         <% }) %>
       </tbody>
