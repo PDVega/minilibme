@@ -6,10 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var register = require('./routes/register');
 var books = require('./routes/books');
 var authors = require('./routes/authors')
 var publishers = require('./routes/publishers')
+var authorbooks = require('./routes/authorbooks')
 
 var app = express();
 
@@ -24,12 +25,32 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+const session = require('express-session')
 
+app.use(session({
+  secret:'pdvega',
+  resave : false,
+  saveUninitialized : true
+  // cookie : { secure : true }
+}))
+
+app.use('/register', register);
 app.use('/', index);
-app.use('/users', users);
+
+
+app.use((req, res, next) => {
+  if(req.session.user){
+    next();
+  }else{
+    res.render('login')
+  }
+})
+
+
 app.use('/books', books);
 app.use('/authors', authors)
 app.use('/publishers', publishers)
+app.use('/authorbooks', authorbooks)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

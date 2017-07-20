@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Authorbook</title>
+  </head>
+  <body>
+    
+    <form class="" action="/authorbooks/add" method="post">
+      <label for="">Book Title</label>
+      <select class="" name="BookId">
+        <% data_book.forEach(book => { %>  
+        <option value="<%= book.id%>"><%= book.title%></option>
+        <% })%>
+      </select>
+      <label for="">Author</label>
+      <select class="" name="AuthorId">
+        <% data_author.forEach(author => { %>
+        <option value="<%= author.id%>"><%= author.first_name + ' ' + author.last_name%></option>
+        <% }) %>
+      </select>
+      
+      <button type="submit" name="button">Add Author Book</button>
+    </form>
+    
+  </body>
+</html>

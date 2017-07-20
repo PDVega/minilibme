@@ -10,9 +10,19 @@ const db = require('../models')
 router.get('/', (req, res) => {
   db.Book.findAll()
   .then(data_book => {
-    res.render('book', {data_book : data_book})
+    db.AuthorBook.findAll({
+      // where : { AuthorId : Author.id },
+      include : [db.Author]
+    })
+    .then(data_authorbook => {
+      // data_authorbook.forEach(authorb => {
+        // console.log(JSON.stringify(data_authorbook, null, 2));
+        // console.log(JSON.stringify(authorb, null, 2));
+        res.render('book', {data_book: data_book, data_authorbook: data_authorbook})
+      })
+    })  
   })
-})
+// })
 
 
 module.exports = router;

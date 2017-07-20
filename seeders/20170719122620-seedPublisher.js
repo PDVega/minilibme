@@ -28,7 +28,7 @@ module.exports = {
      updatedAt : new Date()
    },
    {
-     name : 'Rayyana Komunikasindo',
+     name : 'Informatika',
      createdAt : new Date(),
      updatedAt : new Date()
    },

@@ -31,8 +31,14 @@ module.exports = {
      updatedAt : new Date()
    },
    {
-     first_name : 'Alwi',
-     last_name : 'Shahab',
+     first_name : 'Priyanto',
+     last_name : 'Hidayatullah',
+     createdAt : new Date(),
+     updatedAt : new Date()
+   },
+   {
+     first_name : 'Jauhari',
+     last_name : 'Khairul Kawistara',
      createdAt : new Date(),
      updatedAt : new Date()
    },

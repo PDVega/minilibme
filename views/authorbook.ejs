@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Authorbook</title>
+  </head>
+  <body>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <td>Book</td>
+          <td>Author</td>
+          <td>Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% data_authorbook.forEach(authorbook => { %>
+        <tr>
+          <td><%= authorbook.id %></td>
+          <td><%= authorbook.BookId %></td>
+          <td><%= authorbook.AuthorId %></td>
+          <td><a href="#">Delete</a></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    
+  </body>
+</html>

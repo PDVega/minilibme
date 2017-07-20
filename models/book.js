@@ -7,6 +7,9 @@ module.exports = function(sequelize, DataTypes) {
   
   Book.associate = models => {
     Book.belongsTo(models.Publisher);
+    // Book.belongsToMany(models.Author, {
+    //   through : 'AuthorBook'
+    // })
   }
   return Book;
 };

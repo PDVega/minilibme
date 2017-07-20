@@ -18,7 +18,7 @@ module.exports = {
     updatedAt : new Date()
    },
   {
-    title : 'Matlab Untuk Mahasiswa, Belajar Dari Berbagai Studi Kasus',
+    title : 'Feel Real',
     createdAt : new Date(),
     updatedAt : new Date()
   },
@@ -28,12 +28,12 @@ module.exports = {
     updatedAt : new Date()
   },
   {
-    title : 'Dasar-Dasar Endokrinologi',
+    title : 'Pemrograman Web ( HTML/CSS/JavaScript/Power Designer/XAMPP/PHP/Codelgniter/Jquery )',
     createdAt : new Date(),
     updatedAt : new Date()
   },
   {
-    title : 'Words Their Way: Word Study for Phonics, Vocabulary, and Spelling Instruction',
+    title : 'From Zero To A Pro: Java Script Dan jQuery ',
     createdAt : new Date(),
     updatedAt : new Date()
   },
