@@ -2,17 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Author</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js"></script>
+      <title>Author</title>
+      <%- include partials/layout %>
   </head>
   <body>
     
-    <table>
+    <div class="container">
+    <h2>Daftar Penulis</h2>
+    <table class="bordered highlight responsive-table">
       <thead>
         <tr>
           <th>ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Action</th>
+          <th>Nama Depan</th>
+          <th>Nama Belakang</th>
+          <th>Pilihan</th>
         </tr>
       </thead>
       <tbody>
@@ -26,6 +31,6 @@
         <% }) %>
       </tbody>
     </table>
-    
+    </div>
   </body>
 </html>
