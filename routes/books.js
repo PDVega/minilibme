@@ -24,5 +24,22 @@ router.get('/', (req, res) => {
   })
 // })
 
+router.get('/search', (req, res, next) => {
+  let search = req.body.search
+  db.Book.findAll({
+    where:{
+      title:{
+        $like: `%${search}%`
+      }
+    }
+  })
+  .then((books) => {
+    res.render('searchbook', { data : books})
+  })
+  .catch(err => {
+    res.render('Buku tidak ditemukan')
+  })
+})
+
 
 module.exports = router;
