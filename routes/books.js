@@ -63,14 +63,25 @@ router.post('/add', (req, res) => {
 // })
 
 
+// router.get('/detail/:id', (req, res) => {
+//   let id = req.params.id
+//   db.Book.findById(id)
+//   .then(book => {
+//     res.render('detailbook', {book : book})  
+//   })
+// })
+
 router.get('/detail/:id', (req, res) => {
   let id = req.params.id
-  db.Book.findById(id)
-  .then(book => {
-    res.render('detailbook', {book : book})  
-  })
+  db.sequelize.query(`select "Books"."title", "Authors"."first_name", "Authors"."last_name" from "Books"
+inner join "AuthorBooks" on "Books"."id" = "AuthorBooks"."BookId"
+inner join "Authors" on "Authors"."id" = "AuthorBooks"."AuthorId"
+where "Books"."id" = ${id}`, { type: db.sequelize.QueryTypes.SELECT})
+.then(book => {
+  // console.log(book);
+  res.render('detailbook', {book : book})  
 })
-
+})
 
 router.get('/edit/:id', (req, res) => {
   let id = req.params.id

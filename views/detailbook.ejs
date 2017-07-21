@@ -14,12 +14,18 @@
     <table class="bordered highlight responsive-table">
       <thead>
         <tr>
-          <td>Judul</td>
+          <th>Judul</th>
+          <th>Penulis</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><%= book.title %></td>
+          <td><%= book[0].title %></td>
+          <td><ol>
+            <% book.forEach(b => { %>  
+            <li> <%= b.first_name + ' ' + b.last_name%></li>
+            <% }) %>
+          </ol></td>
         </tr>
       </tbody>
     </table>
