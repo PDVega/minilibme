@@ -4,32 +4,27 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js"></script>
-      <title>Publisher</title>
+      <title>Book</title>
       <%- include partials/layout %>
   </head>
   <body>
     
     <div class="container">
-    <h2>Daftar Penerbit</h2> 
+    <h2>Detail Buku</h2>
     <table class="bordered highlight responsive-table">
       <thead>
         <tr>
-          <th>No</th>
-          <th>Penerbit</th>
-          <th>Pilihan</th>
+          <td>Judul</td>
         </tr>
       </thead>
       <tbody>
-        <% let i = 1%>
-        <% data_publisher.forEach(publisher => { %>
         <tr>
-          <td><%= i++ %></td>
-          <td><%= publisher.name %></td>
-          <td><a href="/publishers/edit/<%= publisher.id%>">Update</a> || <a href="/publishers/delete/<%= publisher.id%>" onclick="return confirm('Are you sure want to delete this Publisher?');">Delete</a></td>
+          <td><%= book.title %></td>
         </tr>
-        <% })%>
       </tbody>
     </table>
     </div>
+    
+    
   </body>
 </html>

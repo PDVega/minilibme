@@ -9,10 +9,7 @@ const db = require('../models');
 
 // //routing to show connection many-to-many between authors and books
 router.get('/', (req, res) => {
-  db.AuthorBook.findAll(//{
-  //  where : { id : 3}
-  //}
-  )
+  db.AuthorBook.findAll()
   .then(data_authorbook => {
     console.log(data_authorbook);
     res.render('authorbook', {data_authorbook : data_authorbook})
