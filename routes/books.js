@@ -19,7 +19,8 @@ router.get('/', (req, res) => {
 
 
 router.post('/', function(req,res) {
-  let search = req.body.search.toLowerCase()
+  // let search = req.body.search.toLowerCase()
+  let search = req.body.search
   console.log(search);
   db.Book.findAll({
     where:{
