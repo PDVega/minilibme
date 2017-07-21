@@ -39,7 +39,7 @@ router.post('/add', (req, res) => {
     updatedAt : new Date()
   })
   .then(() => {
-    res.redirect('/authorbooks')
+    res.redirect('/authorbooks/add')
   })
 })
 
